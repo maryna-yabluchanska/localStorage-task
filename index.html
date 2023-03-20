@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="list.css"/>
+  <title>Login Form</title>
+</head>
+<body>
+<div class="form">
+  <input type="text" id="fullname" placeholder="Enter Fullname"/>
+  <p>
+    My name is <b id="userId">Anonymous</b>, A software developer<br/><br/>
+    and a technical writer
+  </p>
+  <br/>
+  <button type="button" onclick="update()">Update Name</button>
+</div>
+</body>
+<script>
+  if (localStorage.getItem("fullname") === null) {
+    document.getElementById("userId").innerHTML = "Anonymous";
+  } else {
+    document.getElementById("userId").innerHTML =
+      localStorage.getItem("fullname");
+  }
+
+  function update() {
+    let fullname = document.getElementById("fullname").value;
+    localStorage.setItem("fullname", fullname);
+    document.getElementById("userId").innerHTML =
+      localStorage.getItem("fullname");
+  }
+</script>
+</html>
