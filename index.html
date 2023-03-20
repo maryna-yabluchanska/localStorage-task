@@ -15,19 +15,6 @@
   <button type="button" onclick="update()">Update Name</button>
 </div>
 </body>
-<script>
-  if (localStorage.getItem("fullname") === null) {
-    document.getElementById("userId").innerHTML = "Anonymous";
-  } else {
-    document.getElementById("userId").innerHTML =
-      localStorage.getItem("fullname");
-  }
-
-  function update() {
-    let fullname = document.getElementById("fullname").value;
-    localStorage.setItem("fullname", fullname);
-    document.getElementById("userId").innerHTML =
-      localStorage.getItem("fullname");
-  }
-</script>
+<script src="script-localStorage.js"></script>
+<!--<script src="script-sessionStorage.js"></script>-->
 </html>
